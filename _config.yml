@@ -1,14 +1,17 @@
 # Site settings
-title: "Mike Pham"
+title: "Huy Pham"
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my personal website. I share my projects, thoughts, and experiences here.
+  Nguyen Phat Huy Pham — Ph.D. candidate in Animal Breeding and Genetics at Iowa State University.
 baseurl: ""
 url: "https://mikepham2000.github.io"
 
 # Author settings
-author: "Mike Pham"
-author_bio: "Software Developer | Tech Enthusiast"
-author_email: "contact@mikepham2000.com"
+author: "Nguyen Phat Huy Pham"
+author_bio: "Ph.D. Candidate, Animal Breeding & Genetics — Iowa State University"
+author_email: "phamhuy2@iastate.edu"
+
+# CV
+cv_file: "/assets/CV_Huy_Pham.pdf"
 
 # Social media
 twitter_username: ""
