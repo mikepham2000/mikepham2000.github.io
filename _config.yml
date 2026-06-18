@@ -7,16 +7,15 @@ url: "https://mikepham2000.github.io"
 
 # Author settings
 author: "Nguyen Phat Huy Pham"
-author_bio: "Ph.D. Candidate, Animal Breeding & Genetics — Iowa State University"
+author_bio: "Ph.D. Student, Animal Breeding & Genetics — Iowa State University"
 author_email: "phamhuy2@iastate.edu"
 
 # CV
 cv_file: "/assets/CV_Huy_Pham.pdf"
 
 # Social media
-twitter_username: ""
 github_username: "mikepham2000"
-linkedin_username: ""
+linkedin_username: "linkedin.com/in/huy-pham-nguyen-phat"
 
 # Build settings
 markdown: kramdown
