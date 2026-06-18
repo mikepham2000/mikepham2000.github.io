@@ -1,0 +1,22 @@
+# Dependencies
+Gemfile.lock
+vendor/
+
+# Build output
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local bundle installation
+bundle/
