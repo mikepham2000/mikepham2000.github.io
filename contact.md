@@ -6,23 +6,18 @@ permalink: /contact/
 
 # Get in Touch
 
-I'd love to hear from you! Feel free to reach out if you have questions, suggestions, or just want to chat.
+I'd be glad to hear from you — whether about research collaborations, data, questions, or anything in between.
 
 ## Contact Information
 
-- **Email**: [contact@mikepham2000.com](mailto:contact@mikepham2000.com)
+- **Email**: [phamhuy2@iastate.edu](mailto:phamhuy2@iastate.edu)
+- **Office**: 229 Kildee Hall, Iowa State University, Ames, IA 50011, USA
 - **GitHub**: [@mikepham2000](https://github.com/mikepham2000)
 
-## Social Media
+## Curriculum Vitae
 
-Connect with me on:
-- [Twitter](https://twitter.com) (coming soon)
-- [LinkedIn](https://linkedin.com) (coming soon)
-
-## Message
-
-You can also use the form below to send me a message. (Note: For this to work, you'll need to set up a form service like Formspree or Netlify Forms)
+You can [download my full CV (PDF)]({{ site.cv_file | relative_url }}) for my complete education, experience, publications, and honors.
 
 ---
 
-I try to respond to all messages within 24-48 hours. Looking forward to connecting!
+I try to respond to all messages within a few business days. Looking forward to connecting!

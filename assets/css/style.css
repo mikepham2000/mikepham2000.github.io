@@ -172,6 +172,48 @@ pre code {
   margin: 0.5rem 0;
 }
 
+/* Profile card (About page) */
+.profile-card {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.profile-meta {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.profile-meta p {
+  margin: 0.4rem 0;
+}
+
+.profile-meta .profile-org {
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+  }
+}
+
 /* Post Preview */
 .post-preview {
   border-bottom: 1px solid var(--border-color);

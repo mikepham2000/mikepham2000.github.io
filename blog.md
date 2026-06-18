@@ -6,7 +6,7 @@ permalink: /blog/
 
 # Blog
 
-Welcome to my blog! Here I share articles about software development, technology, and my experiences as a developer.
+Welcome to my blog! Here I share notes on animal breeding and genetics, research, data analysis, and tools I find useful along the way.
 
 <div class="post-list">
   {% if site.posts.size > 0 %}

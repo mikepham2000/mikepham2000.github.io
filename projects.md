@@ -1,40 +1,39 @@
 ---
 layout: page
-title: Projects
-permalink: /projects/
+title: Publications
+permalink: /publications/
 ---
 
-# Projects
+# Publications
 
-Here are some of my projects and contributions:
+Peer-reviewed articles, accepted manuscripts, and conference work.
 
-## Featured Projects
+## Journal Articles
 
-### Project One
-**Tech Stack**: JavaScript, React, Node.js  
-**Description**: A brief description of what this project does and its key features.  
-**Links**: [GitHub](https://github.com) | [Live Demo](https://example.com)
-
----
-
-### Project Two
-**Tech Stack**: Python, Django, PostgreSQL  
-**Description**: Another interesting project showcasing different technologies.  
-**Links**: [GitHub](https://github.com) | [Documentation](https://example.com)
+### Genotype by environment interactions for reproductive performance of North American purebred sows between North America and Southeast Asia
+**Huy N. P. Pham**, Robert A. Kemp, Anna Wolc, Jack C. M. Dekkers  
+*Journal of Animal Science*, Vol. 103, 2025, skaf191  
+[DOI ↗](https://doi.org/10.1093/jas/skaf191)
 
 ---
 
-### Project Three
-**Tech Stack**: TypeScript, Vue.js, Firebase  
-**Description**: A description of this project and what makes it unique.  
-**Links**: [GitHub](https://github.com) | [Live Demo](https://example.com)
+### Module eigengenes from weighted gene co-expression network analysis of blood of healthy pigs as potential genetic indicators of disease resilience
+H. N. P. Pham, F. Kayondo, K.-S. Lim, C. Tuggle, M. Dyck, PigGen Canada, F. Fortin, J. Harding, G. Plastow, J. C. M. Dekkers  
+*Accepted, World Congress on Genetics Applied to Livestock Production (WCGALP), 2026*
 
 ---
 
-## Open Source Contributions
+## Selected Presentations
 
-I actively contribute to open-source projects. Check out my [GitHub profile](https://github.com/mikepham2000) for more details on my contributions and repositories.
+### Causal Structure of Carcass and Meat Quality Traits in Crossbred Pigs
+*Poster* · National Swine Improvement Federation · Kansas City, MO · Oct 2025
+
+### Genotype × Environment Interaction for Reproductive Performance of North American Purebred Sows
+*Poster* · National Swine Improvement Federation · Nashville, TN · Nov 2024
+
+### Genetic Parameters of Landrace and Yorkshire Sow Reproductive Traits in Asian Herds
+*Poster* · National Swine Improvement Federation · St. Louis, MO · Oct 2023
 
 ---
 
-**Interested in collaborating?** Feel free to [reach out](/contact/)!
+For a complete list, see my [CV (PDF)]({{ site.cv_file | relative_url }}) or my [GitHub profile](https://github.com/mikepham2000).
