@@ -1,22 +1,14 @@
-# Dependencies
+_site
+.bundle
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+.DS_store
+.ruby-version
+.tweet-cache
 Gemfile.lock
-vendor/
-
-# Build output
-_site/
-.jekyll-cache/
-.sass-cache/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Local bundle installation
-bundle/
+assets/libs/
+node_modules/
+vendor
+.idea
+.venv
