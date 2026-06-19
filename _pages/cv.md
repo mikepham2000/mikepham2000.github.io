@@ -5,7 +5,4 @@ title: cv
 nav: true
 nav_order: 3
 cv_pdf: /assets/pdf/CV_Huy_Pham.pdf # you can also use external links here
-description: Education, experience, teaching, and honors. Download the full PDF above.
-toc:
-  sidebar: left
 ---
