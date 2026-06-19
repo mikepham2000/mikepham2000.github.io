@@ -1,0 +1,71 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Nguyen Phat Huy Pham
+    - name: Affiliation
+      value: Iowa State University, Department of Animal Science
+    - name: Email
+      value: phamhuy2@iastate.edu
+    - name: Research
+      value: Animal breeding & genetics, quantitative genetics, swine, disease resilience
+
+- title: Education
+  type: time_table
+  contents:
+    - title: Ph.D., Animal Breeding &amp; Genetics
+      institution: Iowa State University, Ames, IA
+      year: 2024 - Present
+      description:
+        - "Minor: Meat Science &amp; Statistics"
+        - "Advisor: Dr. Jack C. M. Dekkers"
+    - title: M.S., Animal Breeding &amp; Genetics
+      institution: Iowa State University, Ames, IA
+      year: 2023 - 2024
+      description:
+        - Thesis on genotype × environment interactions for reproductive performance in swine
+    - title: B.S., Farm Technology Management
+      institution: Panyapiwat Institute of Management, Thailand
+      year: 2018 - 2022
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: GGP Swine Breeder Selector
+      institution: Charoen Pokphand Foods, Vietnam
+      year: 2022 - Present
+      description:
+        - On-farm data collection, gilt selection, and technical support
+
+- title: Teaching
+  type: time_table
+  contents:
+    - title: Genetic Improvement of Domestic Animals (AnS 3520)
+      institution: Iowa State University
+      year: Spring 2024 &amp; 2025
+      description:
+        - Led weekly labs of 38 students
+        - "Instructor: Dr. Jennifer Bundy"
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2023, 2024
+      items:
+        - Graduate Student Travel Award, National Swine Improvement Federation
+
+- title: Affiliations
+  type: list
+  contents:
+    - Gamma Sigma Delta · Animal Breeding &amp; Genetics Student Organization · Association of Graduate Animal Scientists
+
+- title: Research Interests
+  type: nested_list
+  contents:
+    - title: Quantitative & statistical genetics
+      items:
+        - Genotype-by-environment interaction
+        - Genetic parameters of reproductive, carcass, and meat quality traits
+    - title: Disease resilience
+      items:
+        - Gene co-expression networks in blood as genetic indicators
