@@ -1,8 +1,7 @@
 ---
-layout: cv
-permalink: /cv/
 title: cv
 nav: true
+permalink: /cv/
 nav_order: 3
-cv_pdf: /assets/pdf/CV_Huy_Pham.pdf # you can also use external links here
 ---
+<meta http-equiv="refresh" content="0; url=/assets/pdf/CV_Huy_Pham.pdf">
