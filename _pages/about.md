@@ -7,7 +7,7 @@ subtitle: Ph.D. student in <a href='https://www.ans.iastate.edu/'>Animal Breedin
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: true # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
   more_info: >
     <p><strong>Iowa State University</strong></p>
     <p>229 Kildee Hall</p>
