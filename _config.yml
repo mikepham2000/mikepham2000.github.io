@@ -93,7 +93,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: blog # blog_name will be displayed in your blog page
-blog_description: notes on animal breeding, genetics, research, and tools
+blog_description: just my personal notes when working with different tools.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
