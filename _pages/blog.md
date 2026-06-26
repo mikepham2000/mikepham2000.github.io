@@ -14,4 +14,11 @@ pagination:
   trail:
     before: 1 # The number of links before the current page
     after: 3 # The number of links after the current page
+latest_posts:
+  enabled: true
+  scrollable: true
+  limit: 0
 ---
+
+{% include latest_posts.liquid %}
+{% include pagination.liquid %}
