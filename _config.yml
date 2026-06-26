@@ -151,6 +151,10 @@ collections:
     defaults:
       layout: post
     output: true
+  posts:
+    output: true
+    defaults:
+      layout: post
   projects:
     output: true
   teachings:
