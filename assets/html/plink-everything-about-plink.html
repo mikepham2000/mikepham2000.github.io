@@ -1,0 +1,810 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>PLINK - Everything About PLINK</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="19480e96-b9d4-8099-9d19-f372dad9c995" class="page sans"><header><h1 class="page-title" dir="auto">PLINK - Everything About PLINK</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80dd-9670-d8337d90ce8b" class=""><em>For more detail go to this: </em><a href="https://www.cog-genomics.org/plink/1.9/data">https://www.cog-genomics.org/plink/1.9/data</a></h3></div><div style="display:contents" dir="auto"><h2 id="33480e96-b9d4-80b7-907c-ffcdd0d27104" class="">File Format Quick-Reference Data files from PLINK (a.k.a bfile)</h2></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80f3-a1c2-dafbd23553c7" class=""><strong>*Important note: </strong>These files should already passed the QC from the genotype company (GenCall Rate from Illumina) if not it can not be used.</p></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8027-b5eb-e62e48b49c10" class="">data.fam (Sample Information)</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-8056-a1c2-d9dee9695aa9" class="">Each row = one individual. Six columns, space/tab-delimited:</p></div><div style="display:contents" dir="ltr"><table id="33480e96-b9d4-80f8-a3d3-c031c71dc0f7" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-800d-b4ec-d797d78a7e12"><th id="jLE;" class="simple-table-header-color simple-table-header">Column</th><th id="tIPr" class="simple-table-header-color simple-table-header">Field</th><th id="s^}N" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8099-a154-d97e4dc47568"><td id="jLE;" class="">1</td><td id="tIPr" class="">FID</td><td id="s^}N" class="">Family ID</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8029-8d3b-f471d75421df"><td id="jLE;" class="">2</td><td id="tIPr" class="">IID</td><td id="s^}N" class="">Individual ID (within family)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80c7-a6cf-f64b42287421"><td id="jLE;" class="">3</td><td id="tIPr" class="">Father ID</td><td id="s^}N" class="">Paternal ID (<code>0</code> if unknown)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8019-8e25-f912d9c24479"><td id="jLE;" class="">4</td><td id="tIPr" class="">Mother ID</td><td id="s^}N" class="">Maternal ID (<code>0</code> if unknown)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8046-babe-ffa346b8cb43"><td id="jLE;" class="">5</td><td id="tIPr" class="">Sex</td><td id="s^}N" class=""><code>1</code> = male, <code>2</code> = female, <code>0</code> = unknown</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8086-9c67-c9a2c33e3b4c"><td id="jLE;" class="">6</td><td id="tIPr" class="">Phenotype</td><td id="s^}N" class=""><code>-9</code> = missing (default)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8011-a633-ce9f3682d210" class="">data.bim (Variant Information)</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-802b-bad9-c5ccb8b8a466" class="">Each row = one variant. Six columns:</p></div><div style="display:contents" dir="ltr"><table id="33480e96-b9d4-8058-b73a-daf461243d74" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80aa-b597-df04e31e5a17"><th id="{|AU" class="simple-table-header-color simple-table-header">Column</th><th id="[jSl" class="simple-table-header-color simple-table-header">Field</th><th id="Pe~E" class="simple-table-header-color simple-table-header">Description</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80f3-a13e-e69e7f728c1a"><td id="{|AU" class="">1</td><td id="[jSl" class="">CHR</td><td id="Pe~E" class="">Chromosome code</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8043-840c-d2a741ec6b37"><td id="{|AU" class="">2</td><td id="[jSl" class="">SNP</td><td id="Pe~E" class="">Variant ID (e.g., rs number)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-801e-baaf-e62524ca8e34"><td id="{|AU" class="">3</td><td id="[jSl" class="">cM</td><td id="Pe~E" class="">Genetic distance in Morgans (often <code>0</code>)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80d6-baf0-e254941a3a92"><td id="{|AU" class="">4</td><td id="[jSl" class="">BP</td><td id="Pe~E" class="">Base-pair coordinate</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8064-bb00-e3b9094af797"><td id="{|AU" class="">5</td><td id="[jSl" class="">A1</td><td id="Pe~E" class="">Allele 1 (usually minor)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8088-ac60-db7fc0d61964"><td id="{|AU" class="">6</td><td id="[jSl" class="">A2</td><td id="Pe~E" class="">Allele 2 (usually major)</td></tr></div></tbody></table></div><div style="display:contents" dir="ltr"><figure id="19480e96-b9d4-8012-9bde-cb16cfef8fc6" class="image"><a href="PLINK%20-%20Everything%20About%20PLINK/Screenshot_2025-02-07_at_7.42.31_PM.png"><img style="width:709.9431762695312px" src="PLINK%20-%20Everything%20About%20PLINK/Screenshot_2025-02-07_at_7.42.31_PM.png"/></a></figure></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8070-9d1e-fde436b406b3" class="">data.bed (Binary Genotype File)</h3></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-801f-b041-e49bc1808437" class="bulleted-list"><li style="list-style-type:disc">Binary-encoded genotype data — <strong>not human-readable</strong></li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-80c9-a327-f55060814a81" class="bulleted-list"><li style="list-style-type:disc">Always accompanied by <code>.bim</code> and <code>.fam</code> files</li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-80fc-ace2-c098ececf566" class="bulleted-list"><li style="list-style-type:disc">These three files together are called <strong>bfiles</strong> (binary fileset)</li></ul></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80d3-a030-f19fee26741f" class="">data.ped (Text Genotype File)</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-8061-959a-f92ea6e27add" class="">First 6 columns = same as <code>.fam</code>. Remaining columns = genotype data (two allele columns per SNP).</p></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-80f7-a685-fcb6d7b4c7d9" class="bulleted-list"><li style="list-style-type:disc">Paired with a <code>.map</code> file</li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-8019-b2f0-ec3f4b3dec00" class="bulleted-list"><li style="list-style-type:disc"><strong>Not recommended for new scripts</strong> — always convert to binary (<code>.bed</code>) for efficiency</li></ul></div><div style="display:contents" dir="ltr"><figure id="19480e96-b9d4-8099-9169-c14b136423fe" class="image"><a href="PLINK%20-%20Everything%20About%20PLINK/Screenshot_2025-02-07_at_7.45.07_PM.png"><img style="width:709.9715576171875px" src="PLINK%20-%20Everything%20About%20PLINK/Screenshot_2025-02-07_at_7.45.07_PM.png"/></a></figure></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8068-bf95-f1f8f704db10" class="">data.map</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-8073-a976-d113f2f3f9b9" class="">Four columns: CHR, SNP ID, cM, BP. This is the text-format companion to <code>.ped</code>.</p></div><div style="display:contents" dir="auto"><p id="19480e96-b9d4-80c3-866b-c104aa8be060" class="">data.fam - information about all individual</p></div><div style="display:contents" dir="ltr"><figure id="19480e96-b9d4-8005-a5dd-d8666fb604b0" class="image"><a href="PLINK%20-%20Everything%20About%20PLINK/Screenshot_2025-02-07_at_7.40.57_PM.png"><img style="width:709.9573364257812px" src="PLINK%20-%20Everything%20About%20PLINK/Screenshot_2025-02-07_at_7.40.57_PM.png"/></a></figure></div><div style="display:contents" dir="auto"><p id="19480e96-b9d4-8084-95dd-f70dde98b3b3" class="">-9 is encoded for missing or unknown <strong>by default</strong></p></div><div style="display:contents" dir="auto"><h2 id="1ff80e96-b9d4-802f-b2ca-f5046b2e3e08" class="">From FinalReport to Plink file</h2></div><div style="display:contents" dir="auto"><h3 id="1ff80e96-b9d4-80cd-be7d-f2c113b206a4" class="">1. Make the ped file</h3></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-r.min.js" integrity="sha512-RQ0HgkZNAWBAoL3DQOK5fac8U0Xt9eD/hXusL6YBgMXPQE7pjFjVtsO/embtTiv/PDpjRCVRGagbwXj7oQUPDg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="1ff80e96-b9d4-80bf-9f4e-c7d5a2ab78ba" class="code code-wrap"><code class="language-r" style="white-space:pre-wrap;word-break:break-all">./plink19 --nonfounders --lfile geno --missing-genotype - --recodeA ped --out geno</code></pre></div><div style="display:contents" dir="auto"><h3 id="1ff80e96-b9d4-8010-a169-f93316715947" class="">Optional</h3></div><div style="display:contents" dir="auto"><p id="1ff80e96-b9d4-8070-902f-f06d6646ed90" class="">--output-missing-genotype 5 : code for missing genotype (by default is 0), BLUP take 5</p></div><div style="display:contents" dir="auto"><h3 id="1ff80e96-b9d4-8015-bea5-c34fce47e8f3" class="">2. Make .bed file</h3></div><div style="display:contents" dir="auto"><pre id="1ff80e96-b9d4-8077-8dce-c1a4e858c0b4" class="code code-wrap"><code class="language-r" style="white-space:pre-wrap;word-break:break-all">./plink19 --file geno  --missing-genotype - --output-missing-genotype 5 --make-bed -out geno</code></pre></div><div style="display:contents" dir="auto"><h3 id="1ff80e96-b9d4-80a7-a6a5-f50ab35ba9af" class="">Optional</h3></div><div style="display:contents" dir="auto"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">QC</summary><div class="indented"><div style="display:contents" dir="auto"><pre id="1ff80e96-b9d4-801a-95b1-f0ea534954c0" class="code code-wrap"><code class="language-r" style="white-space:pre-wrap;word-break:break-all">--maf 0.01
+--geno 0.05</code></pre></div></div></details></div><div style="display:contents" dir="auto"><h3 id="1ff80e96-b9d4-8079-826b-e92cc17a683d" class="">3. Recode to 0/1/2 for further</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-8010-bea5-e02933b1641c" class="">A for additive and AD for additive + dominance (which I failed into this trap before, the number of SNPs after recoding with AD would be <strong>x2 </strong>the size of the actual number of SNPs). <strong>Mike see below!!!</strong></p></div><div style="display:contents" dir="auto"><pre id="1ff80e96-b9d4-8077-b189-cba7193a9810" class="code code-wrap"><code class="language-r" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile geno_recode --recode A --output-missing-genotype 5 --out geno012</code></pre></div><div style="display:contents" dir="auto"><pre id="1ff80e96-b9d4-804b-bc6b-e97d087d472f" class="code code-wrap"><code class="language-r" style="white-space:pre-wrap;word-break:break-all">#Transform form A/B to AGCT based on manifest data.
+./plink19 --bfile geno_recode --update-alleles allele_update.txt --make-bed --out geno_nt
+##BLUPF90 - PreGSF90 take 5 as missing genotype</code></pre></div><div style="display:contents" dir="auto"><h1 id="1ff80e96-b9d4-8093-bdc9-e2ec59f6edc8" class="">Practical Final Report to Plink file </h1></div><div style="display:contents" dir="auto"><p id="1fe80e96-b9d4-80f5-8fad-c9dcfa186ca9" class="">Make bed file</p></div><div style="display:contents" dir="auto"><pre id="1fe80e96-b9d4-806e-8da5-ee646e69a743" class="code code-wrap"><code class="language-r" style="white-space:pre-wrap;word-break:break-all">./plink19 --nonfounders --lfile geno --missing-genotype - --output-missing-genotype 5 --recode ped --out geno</code></pre></div><div style="display:contents" dir="auto"><pre id="1fe80e96-b9d4-80e5-adb7-c4e9e4da96bc" class="code code-wrap"><code class="language-r" style="white-space:pre-wrap;word-break:break-all">./plink19 --nonfounders --allow-no-sex  --lfile geno — mising-code - --make-bed --out geno</code></pre></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-jsx.min.js" integrity="sha512-m3JYEI6gx5fh9jF10FjGoMzVKcV2N6nchcDcqPCdI1L3R2WQV7br2XVNR8iTLb2daOMRl3zldbcfT40xU2ntVw==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="33480e96-b9d4-806c-b7a9-eb630641dd45" class="code code-wrap"><code class="language-jsx" style="white-space:pre-wrap;word-break:break-all">sed &#x27;s/NA/5/g&#x27; swine_012.raw &gt; swine_012_5.raw</code></pre></div><div style="display:contents" dir="auto"><h1 id="33480e96-b9d4-80ae-b6b5-e997a37f87d0" class="block-color-teal_background">You can do more things in PLINK than you think</h1></div><div style="display:contents" dir="auto"><h2 id="33480e96-b9d4-8091-abeb-d3e17cd10a54" class="">Strand Flipping &amp; Allele Issues</h2></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80ad-a025-e64ef1b21df6" class="">Strand inconsistencies are one of the most common problems when merging data from different genotyping platforms. PLINK has several tools to handle this.</p></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80a8-9ae1-f89bde5f1ff5" class="">Flip strand for A/C/G/T SNPs</h3></div><div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js" integrity="sha512-whYhDwtTmlC/NpZlCr6PSsAaLOrfjVg/iXAnC4H/dtiHawpShhT2SlIMbpIhT/IL/NrpdMm+Hq2C13+VKpHTYw==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><pre id="33480e96-b9d4-80f8-ab76-c6efbf5b0540" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile mydata --flip snplist.txt --make-bed --out mydata_flipped</code></pre></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80ec-88a6-d999a03d2776" class="">This swaps A↔T and C↔G for all SNPs in the list.</p></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80ce-bc77-d903081abd71" class="">Trial Flip Workflow (Resolving Merge Conflicts)</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80f3-8dc6-f5f5d39b71a3" class="">When a merge fails due to allele mismatches, PLINK writes a <code>.missnp</code> file. Use this workflow:</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-809f-966f-f9628336d654" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all"># Step 1: Try merging — it fails, produces merged.missnp
+./plink19 --bfile source1 --bmerge source2 --make-bed --out merged
+
+# Step 2: Flip problematic SNPs in source2
+./plink19 --bfile source2 --flip merged.missnp --make-bed --out source2_trial
+
+# Step 3: Retry merge
+./plink19 --bfile source1 --bmerge source2_trial --make-bed --out merged_trial
+
+# Step 4: If most errors disappeared → strand issue confirmed
+# Flip remaining errors back
+./plink19 --bfile source2_trial --flip merged_trial.missnp --make-bed --out source2_corrected
+
+# Step 5: Final merge
+./plink19 --bfile source1 --bmerge source2_corrected --make-bed --out merged_final</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8071-a105-e5b9261f90eb" class="">Update Allele Codes</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-806b-b273-f6870ce7945b" class="">When you need to convert allele coding (e.g., from A/B to A/C/G/T using manifest data):</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-80c0-b34f-c7a313896f29" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile mydata --update-alleles allele_update.txt --make-bed --out mydata_nt</code></pre></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-805f-b313-f43f6cfdc69f" class="">The <code>allele_update.txt</code> file has 5 columns: SNP ID, Old A1, Old A2, New A1, New A2.</p></div><div style="display:contents" dir="auto"><hr id="33480e96-b9d4-80b5-8b2b-f138e8869b28"/></div><div style="display:contents" dir="auto"><h2 id="33480e96-b9d4-80e2-9187-c86d64ca9ca7" class="">Merging Datasets</h2></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-8089-a0b2-e97ac5b87258" class="block-color-brown_background"><em><strong>Helpful for multi-breed quality control and merge afterwards</strong></em></p></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80bf-8edb-f829ad1145b4" class="">Merge Two Binary Filesets</h3></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-8055-bb49-d7e50c92878e" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile source1 --bmerge source2 --make-bed --out merged</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8027-8040-c661af335536" class="">Merge Multiple Filesets</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-805a-8dc0-f45df672402f" class="">Create a text file (<code>merge_list.txt</code>) with one fileset prefix per line:</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-80c8-b186-d089416ce12c" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">source2
+source3
+source4</code></pre></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-8079-9483-d313319cfede" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile source1 --merge-list merge_list.txt --make-bed --out merged_all</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80a0-bf8a-d0e2c28b3d59" class="">Handling Triallelic Errors</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80c5-ad00-de4007b2ec4e" class="">If the merge fails due to 3+ alleles at a locus, PLINK writes <code>merged.missnp</code>. To exclude and proceed:</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-80ea-920c-d2ce9ca516c1" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile source1 --exclude merged.missnp --make-bed --out source1_clean
+./plink19 --bfile source2 --exclude merged.missnp --make-bed --out source2_clean
+./plink19 --bfile source1_clean --bmerge source2_clean --make-bed --out merged</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-800f-aafd-e09078e0e554" class="">Merge Modes</h3></div><div style="display:contents" dir="ltr"><table id="33480e96-b9d4-80ca-a4d2-d3d18c1e82e6" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8058-9117-e03f32fe31c7"><th id="mNMF" class="simple-table-header-color simple-table-header">Mode</th><th id="jBrQ" class="simple-table-header-color simple-table-header">Behavior</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80a1-b765-fe353df0c47b"><td id="mNMF" class="">1 (default)</td><td id="jBrQ" class="">Ignore missing, set mismatches to missing</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8036-af08-f91ee856fed5"><td id="mNMF" class="">2</td><td id="jBrQ" class="">Only overwrite missing calls in original</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8069-b314-fcb8e5c277de"><td id="mNMF" class="">3</td><td id="jBrQ" class="">Only overwrite with nonmissing calls from new file</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80ca-a906-d9e1d2ccb6a7"><td id="mNMF" class="">4</td><td id="jBrQ" class="">Never overwrite</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-800e-857c-fb221ff09038"><td id="mNMF" class="">5</td><td id="jBrQ" class="">Always overwrite</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80ec-87fd-e36b94dacbd0"><td id="mNMF" class="">6</td><td id="jBrQ" class="">Report all mismatches (no merge)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8052-bf88-fdaf011388b3"><td id="mNMF" class="">7</td><td id="jBrQ" class="">Report nonmissing mismatches only (no merge)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-80e2-830d-c9949caf110e" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile source1 --bmerge source2 --merge-mode 5 --make-bed --out merged</code></pre></div><div style="display:contents" dir="auto"><hr id="33480e96-b9d4-80e5-9254-c330564d80d1"/></div><div style="display:contents" dir="auto"><h2 id="33480e96-b9d4-8033-8a11-d33bf17ada1a" class="">LD Pruning</h2></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-802d-9b49-f42d463238a9" class="">LD pruning removes correlated variants. Essential <strong>before</strong> PCA, GRM construction, or IBD estimation.</p></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-808d-b117-f363b2fa0cfb" class="block-color-brown_background"><em><strong>Mostly for human genotypes and may be for whole genome sequencing data</strong></em></p></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8049-93ac-fe99b51d7309" class="">Pairwise LD Pruning (Most Common)</h3></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-8085-ba59-d3aad41dd1a3" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all"># Window size 50 SNPs, step 5 SNPs, r² threshold 0.2
+./plink19 --bfile mydata --indep-pairwise 50 5 0.2 --out pruned
+
+# Apply the pruning
+./plink19 --bfile mydata --extract pruned.prune.in --make-bed --out mydata_pruned</code></pre></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80f5-aef2-f69e0d9f8d3e" class="">Outputs:</p></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-808e-80c9-dbc49c21ffde" class="bulleted-list"><li style="list-style-type:disc"><code>pruned.prune.in</code> — SNPs to keep</li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-807e-8752-db9b44f5c89a" class="bulleted-list"><li style="list-style-type:disc"><code>pruned.prune.out</code> — SNPs to remove</li></ul></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8081-8e78-ed8d2f5bb35d" class="">Compute LD Between Variant Pairs</h3></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-80ae-af8c-e4edc0b8bdcf" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all"># Pairwise r² for all SNPs within 1000 kb
+./plink19 --bfile mydata --r2 --ld-window-kb 1000 --ld-window 99999 --ld-window-r2 0.2 --out ld_results</code></pre></div><div style="display:contents" dir="auto"><hr id="33480e96-b9d4-80ff-8775-d7a61685f480"/></div><div style="display:contents" dir="auto"><h2 id="33480e96-b9d4-8041-aa2a-f944ef8b6c35" class="">PCA &amp; Population Structure Visualization</h2></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8072-abe4-e3df971f3495" class="">PCA</h3></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-8057-959e-c84223b2b8ac" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all"># Compute top 10 PCs (default = 20)
+./plink19 --bfile mydata_pruned --pca 10 --out pca_results</code></pre></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-801b-8159-cca0dcba22cc" class="">Outputs:</p></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-8090-9006-c96e14adfdd2" class="bulleted-list"><li style="list-style-type:disc"><code>pca_results.eigenval</code> — eigenvalues</li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-80d9-8cdb-e28fa631099e" class="bulleted-list"><li style="list-style-type:disc"><code>pca_results.eigenvec</code> — eigenvectors (sample PCs), columns: FID, IID, PC1, PC2, …</li></ul></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-804d-9874-f8693901987b" class="">MDS Plot (Alternative to PCA)</h3></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-80dd-84a2-e971f8055036" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile mydata_pruned --cluster --mds-plot 4 --out mds_results</code></pre></div><div style="display:contents" dir="auto"><blockquote id="33480e96-b9d4-802f-8300-c9abaf73beb6" class="">💡 Always LD-prune <strong>before</strong> running PCA or MDS for dense pannel</blockquote></div><div style="display:contents" dir="auto"><hr id="33480e96-b9d4-80ec-bdd8-c167fe43df09"/></div><div style="display:contents" dir="auto"><h2 id="33480e96-b9d4-808c-985a-ec749fe23e81" class="">Filtering Cheat Sheet</h2></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8043-85c3-fa5537e81863" class="">Per-Variant Filters</h3></div><div style="display:contents" dir="ltr"><table id="33480e96-b9d4-8011-a351-d1ab31e1f175" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8011-9b80-ecf14b413f77"><th id="x:tQ" class="simple-table-header-color simple-table-header">Flag</th><th id="uRhS" class="simple-table-header-color simple-table-header">What It Does</th><th id="@jkA" class="simple-table-header-color simple-table-header">Typical Threshold</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-806e-8368-c9673ae377e4"><td id="x:tQ" class=""><code>--maf 0.01</code></td><td id="uRhS" class="">Remove rare variants (MAF &lt; 1%)</td><td id="@jkA" class="">0.01–0.05</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80e0-ac3b-e1a91ef456a4"><td id="x:tQ" class=""><code>--geno 0.05</code></td><td id="uRhS" class="">Remove SNPs missing in &gt;5% of samples</td><td id="@jkA" class="">0.02–0.10</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8038-a419-f181a5dba82a"><td id="x:tQ" class=""><code>--hwe 1e-6</code></td><td id="uRhS" class="">Remove SNPs failing Hardy-Weinberg test</td><td id="@jkA" class="">1e-6 (cases), 1e-4 (controls)</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><blockquote id="33480e96-b9d4-80b0-8de9-ea44dbe1a3e5" class="">💡 For Crossbred population, hwe will not hold. <strong>Should NOT be CHECKED</strong></blockquote></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-807d-b1e8-f94be492cff3" class="">Per-Individual Filters</h3></div><div style="display:contents" dir="ltr"><table id="33480e96-b9d4-8074-a0e3-cc88d318b187" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80f2-bdb2-cb25e34b48ef"><th id="TgfX" class="simple-table-header-color simple-table-header">Flag</th><th id="OEvY" class="simple-table-header-color simple-table-header">What It Does</th><th id="[|_e" class="simple-table-header-color simple-table-header">Typical Threshold</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80b9-82de-e6df800cdff6"><td id="TgfX" class=""><code>--mind 0.05</code></td><td id="OEvY" class="">Remove individuals missing &gt;5% of SNPs</td><td id="[|_e" class="">0.02–0.10</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80f5-9bf1-fc877e01700e" class="">Subsetting</h3></div><div style="display:contents" dir="ltr"><table id="33480e96-b9d4-80a4-83d2-c42346470be0" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80fd-98e1-cc59cf715f9c"><th id="Mf]G" class="simple-table-header-color simple-table-header">Flag</th><th id=";X;i" class="simple-table-header-color simple-table-header" style="width:309px">What It Does</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8049-88d5-db4b956c31fb"><td id="Mf]G" class=""><code>--extract snplist.txt</code></td><td id=";X;i" class="" style="width:309px">Keep only SNPs in file</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8048-8653-fbef2115e35d"><td id="Mf]G" class=""><code>--exclude snplist.txt</code></td><td id=";X;i" class="" style="width:309px">Remove SNPs in file</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80aa-97f5-ee1010d028a0"><td id="Mf]G" class=""><code>--keep samples.txt</code></td><td id=";X;i" class="" style="width:309px">Keep only samples in file (FID + IID)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8077-945e-de54783e10ff"><td id="Mf]G" class=""><code>--remove samples.txt</code></td><td id=";X;i" class="" style="width:309px">Remove samples in file (FID + IID)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8017-9fa0-fd4d15f0ac32"><td id="Mf]G" class=""><code>--chr 1-22</code></td><td id=";X;i" class="" style="width:309px">Restrict to autosomes only</td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80b0-905b-d58747d25253" class="">Typical QC Pipeline Order</h3></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-804e-b04e-ec95c6a65dd5" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all"># Step 1: Per-individual missingness
+./plink19 --bfile raw --mind 0.05 --make-bed --out qc1
+
+# Step 2: Per-SNP missingness
+./plink19 --bfile qc1 --geno 0.05 --make-bed --out qc2
+
+# Step 3: MAF filter
+./plink19 --bfile qc2 --maf 0.01 --make-bed --out qc3
+
+# Step 4: HWE filter
+./plink19 --bfile qc3 --hwe 1e-6 --make-bed --out qc4
+
+# All at one
+./plink19 --bfile qc3 --geno 0.05 --maf 0.01 --mind 0.05 --hwe 1e-6 --make-bed --out qc4
+
+################################################################################
+################### OPTIONAL ###################################################################################################################################
+# Step 5: LD prune (for PCA/GRM only, not for final analysis data)
+./plink19 --bfile qc4 --indep-pairwise 50 5 0.2 --out prune
+./plink19 --bfile qc4 --extract prune.prune.in --make-bed --out qc4_pruned
+
+
+# Step 6: Check heterozygosity (flag outliers manually)
+./plink19 --bfile qc4_pruned --het --out het_check
+
+# Step 7: Check relatedness (IBD)
+./plink19 --bfile qc4_pruned --genome --min 0.185 --out ibd_check</code></pre></div><div style="display:contents" dir="auto"><h2 id="33480e96-b9d4-80b7-9397-f871c432ced7" class="">VCF ↔ PLINK Conversion</h2></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-809b-a156-ca98edc23cbb" class="">Import VCF to PLINK Binary</h3></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-8023-9e78-d4b59933a642" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --vcf input.vcf.gz --make-bed --out mydata</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8015-b1ee-d25701900c8f" class="">Export PLINK to VCF</h3></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-80eb-91eb-e73d7212fec1" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all"># Using merged FID_IID as sample ID
+./plink19 --bfile mydata --recode vcf --out output
+
+# Using only IID as sample ID
+./plink19 --bfile mydata --recode vcf-iid --out output
+
+# Gzipped output
+./plink19 --bfile mydata --recode vcf-iid bgz --out output</code></pre></div><div style="display:contents" dir="auto"><blockquote id="33480e96-b9d4-8051-b2c3-e63f8e5e6f77" class="">⚠️ When exporting to VCF with correct reference alleles, include:<div style="display:contents" dir="auto"><pre id="33480e96-b9d4-80f0-a92a-efcdb32c5573" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile mydata --a2-allele ref_alleles.txt --real-ref-alleles --recode vcf-iid --out output</code></pre></div></blockquote></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8057-b383-c91994669de8" class="">Scrape Allele Codes from a VCF</h3></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-8018-9d45-eed0caa5d10b" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile mydata --a2-allele input.vcf 4 3 &#x27;#&#x27; --make-bed --out mydata_refcorrected</code></pre></div><div style="display:contents" dir="auto"><hr id="33480e96-b9d4-804f-b2fb-d397589d0b9b"/></div><div style="display:contents" dir="auto"><h2 id="33480e96-b9d4-80f1-83ea-d14c49e840e2" class="">Common Problem</h2></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80a8-8088-f5b9eab1145f" class="">1. The AD Recoding Trap</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80f1-9a5b-f57f18b7da96" class="">Using <code>--recode AD</code> produces <strong>additive + dominance</strong> columns, so the number of columns doubles compared to <code>--recode A</code>. The dominance column encodes heterozygotes as 1, everything else as 0.</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-809c-8254-dd8d663552ca" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all"># Additive only (0/1/2) — most common use case
+./plink19 --bfile mydata --recode A --out geno012
+
+# Additive + Dominance — 2× the columns!
+./plink19 --bfile mydata --recode AD --out geno012_AD</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80e9-aca7-c46d00de4c64" class="">2. <code>-keep-allele-order</code> Is Critical</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80e9-8369-caebac97e2d9" class="">By default, PLINK reassigns the major allele as A2 on every <code>--make-bed</code>. This silently changes your allele encoding. <strong>Always use </strong><code><strong>--keep-allele-order</strong></code> when allele assignment matters:</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-804a-9990-d15e6bdccb50" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile mydata --keep-allele-order --make-bed --out mydata_preserved</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80d6-8c0e-ec0d76ab25d6" class="">3. <code>-nonfounders</code> for Datasets Without Pedigree</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-8050-9db9-c1f89f898eea" class="">If all individuals have Father = <code>0</code> and Mother = <code>0</code>, PLINK treats everyone as founders and <strong>skips</strong> some calculations (like <code>--freq</code> and <code>--hardy</code>). Use <code>--nonfounders</code> to force inclusion:</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-8018-9a3b-dd9f149c233f" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile mydata --nonfounders --freq --out freq_results</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-800d-8cdf-dda8cd8d854c" class="">4. Missing Genotype Encoding: Input vs Output</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80e6-afbb-f8efce3fc45d" class="">These are <strong>two different flags</strong>:</p></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-8013-97a4-e2baef83748b" class="bulleted-list"><li style="list-style-type:disc"><code>-missing-genotype -</code> → tells PLINK that  means missing in the <strong>input</strong> file</li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-8024-82d9-cbba476b08ba" class="bulleted-list"><li style="list-style-type:disc"><code>-output-missing-genotype 5</code> → tells PLINK to write <code>5</code> for missing in the <strong>output</strong> file</li></ul></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-8073-be78-e6d3898fc7fe" class="">They are independent and often both needed:</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-80b4-9bda-e05029501287" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --lfile geno --missing-genotype - --output-missing-genotype 5 --make-bed --out geno</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80b6-9b83-f295e947e5c7" class="">5. <code>-allow-no-sex</code> for Datasets Without Sex Info</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-8042-888f-db1f8b363b00" class="">PLINK removes individuals with ambiguous sex by default in some analyses. If your data doesn&#x27;t have sex information:</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-8078-8895-f47eccd86b91" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile mydata --allow-no-sex --assoc --out results</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80ce-94a8-ef1e8c920637" class="">6. Chromosome Coding in Output</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-8062-bb99-f4e69772bb8d" class="">Different tools expect different chromosome codes (e.g., <code>23</code> vs <code>chrX</code> vs <code>X</code>). Control this with:</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-8002-a2ba-d6a6d89ad836" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile mydata --output-chr chrM --recode vcf --out output
+# Options: 26, M, MT, 0M, chr26, chrM, chrMT</code></pre></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-8008-b2a0-d62bb7fde48a" class="">7. X Chromosome Pseudo-Autosomal Region</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-808d-ad59-d46f6ee8803c" class="">Most heterozygous haploid warnings come from the PAR region not being split off. Fix with:</p></div><div style="display:contents" dir="auto"><pre id="33480e96-b9d4-80fb-af1d-c8752f41d64c" class="code code-wrap"><code class="language-bash" style="white-space:pre-wrap;word-break:break-all">./plink19 --bfile mydata --split-x b37 --make-bed --out mydata_splitx
+# Use b36, b37, or b38 depending on your genome build</code></pre></div><div style="display:contents" dir="auto"><hr id="33480e96-b9d4-80fd-8c2b-e048488f2f2a"/></div><div style="display:contents" dir="auto"><h2 id="33480e96-b9d4-803a-97dc-ef0a5d1e69b1" class="">PLINK 1.9 vs PLINK 2.0 — When to Use Which</h2></div><div style="display:contents" dir="ltr"><table id="33480e96-b9d4-808d-a7ac-e2561d76ab01" class="simple-table"><thead class="simple-table-header"><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8080-b146-c15b5918df6b"><th id="EKn@" class="simple-table-header-color simple-table-header">Feature</th><th id="O=`S" class="simple-table-header-color simple-table-header">PLINK 1.9</th><th id="I?w\" class="simple-table-header-color simple-table-header">PLINK 2.0</th></tr></div></thead><tbody><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-804b-bd72-ff54f80605b0"><td id="EKn@" class="">Binary format</td><td id="O=`S" class=""><code>.bed/.bim/.fam</code></td><td id="I?w\" class=""><code>.pgen/.pvar/.psam</code></td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-803f-9c7a-e62c851a4022"><td id="EKn@" class="">Multiallelic variants</td><td id="O=`S" class="">Not supported (drops to biallelic)</td><td id="I?w\" class="">Supported natively</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-800b-9ea8-f868f9e1cc36"><td id="EKn@" class="">Variant ID templates</td><td id="O=`S" class=""><code>--set-missing-var-ids</code> (A1/A2 based)</td><td id="I?w\" class=""><code>--set-all-var-ids</code> (REF/ALT based — more reliable)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8063-9adc-eb9d053278b2"><td id="EKn@" class="">Allele order</td><td id="O=`S" class="">Major = A2 by default (confusing)</td><td id="I?w\" class="">Reference allele preserved properly</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-80fa-8d1b-d66d6b1d62f7"><td id="EKn@" class="">Dosage data</td><td id="O=`S" class="">Limited (<code>--dosage</code>)</td><td id="I?w\" class="">Full support</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-809c-8254-dbbf1a21a871"><td id="EKn@" class="">Speed</td><td id="O=`S" class="">Fast</td><td id="I?w\" class="">Faster (especially for large datasets)</td></tr></div><div style="display:contents" dir="ltr"><tr id="33480e96-b9d4-8016-b108-c320e52b05ad"><td id="EKn@" class="">KING kinship</td><td id="O=`S" class="">Not available</td><td id="I?w\" class=""><code>--make-king</code></td></tr></div></tbody></table></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80c9-a3fe-dd82854009e3" class=""><strong>Use PLINK 2.0 when:</strong></p></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-8048-96a1-ccbd46d9fd72" class="bulleted-list"><li style="list-style-type:disc">Working with multiallelic variants</li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-80f8-904e-e933055dc218" class="bulleted-list"><li style="list-style-type:disc">You need REF/ALT-aware variant naming</li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-8044-b22b-d64649559d96" class="bulleted-list"><li style="list-style-type:disc">Handling dosage/imputed data</li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-8064-ac58-cdf03083ffc4" class="bulleted-list"><li style="list-style-type:disc">Processing very large WGS datasets</li></ul></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80bf-a824-d0027ffb2671" class=""><strong>Stick with PLINK 1.9 when:</strong></p></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-8045-9b00-c7a7a5562cab" class="bulleted-list"><li style="list-style-type:disc">Your pipeline or downstream tool (e.g., BLUPF90) expects <code>.bed/.bim/.fam</code></li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-8071-9eb4-db5c1837801f" class="bulleted-list"><li style="list-style-type:disc">You need <code>-recode</code> modifiers not yet ported to 2.0</li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-800b-91c7-cc52ad9cd8f4" class="bulleted-list"><li style="list-style-type:disc">Legacy script compatibility</li></ul></div><div style="display:contents" dir="auto"><hr id="33480e96-b9d4-8082-a973-f990366aea24"/></div><div style="display:contents" dir="auto"><h2 id="33480e96-b9d4-801f-b452-fae79ffcfff9" class="">Chatroom and Resources</h2></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-8092-af9a-eefd040cb1a6" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.cog-genomics.org/plink/1.9/">PLINK 1.9 Documentation</a></li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-80be-8847-fee6f32cab28" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.cog-genomics.org/plink/2.0/">PLINK 2.0 Documentation</a></li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-800a-a7b7-cd2c3168359f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.cog-genomics.org/plink/1.9/formats">File Format Reference</a></li></ul></div><div style="display:contents" dir="auto"><ul id="33480e96-b9d4-80e5-b4d0-eb771239935c" class="bulleted-list"><li style="list-style-type:disc"><a href="https://groups.google.com/d/forum/plink2-users">plink2-users Google Group</a></li></ul></div><div style="display:contents" dir="auto"><h3 id="33480e96-b9d4-80f0-938b-f838aef9fa0c" class="">Citations 📚</h3></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-80ce-a92b-fed4c58cb0fe" class=""> Purcell et al. (2007) &quot;PLINK: a tool set for whole-genome association and population-based linkage analyses.&quot; <em>Am J Hum Genet</em> 81(3):559-575.</p></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-805e-a827-d423b27b51ec" class="">Chang et al. (2015) &quot;Second-generation PLINK: rising to the challenge of larger and richer datasets.&quot; <em>GigaScience</em> 4:7.</p></div><div style="display:contents" dir="auto"><p id="33480e96-b9d4-8022-bc88-d5748d37f1e7" class="">
+</p></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
